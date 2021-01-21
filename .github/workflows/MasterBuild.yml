@@ -28,4 +28,3 @@ jobs:
       - name: Switch to Release Folder
         run: |
           cd Retro\bin\Release
-          ls -la
