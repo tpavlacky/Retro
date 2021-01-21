@@ -93,16 +93,19 @@ namespace Retro
       if (_options.Positive)
       {
         retro.PositiveExperiences.Add(new PositiveRecord(description, date));
+        return;
       }
 
       if (_options.Negative)
       {
         retro.NegativeExperiences.Add(new NegativeRecord(description, date));
+        return;
       }
 
       if (_options.Kudos)
       {
         retro.Kudos.Add(new Kudos(_options.KudosTarget, description, date));
+        return;
       }
 
       throw new ArgumentOutOfRangeException("Unknown record type");
