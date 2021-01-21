@@ -1,3 +1,5 @@
+![Build](https://github.com/tpavlacky/Retro/workflows/Build/badge.svg) 
+
 # General
 This awesome and high-end application will allow you to store your remarks to the next retrospective.
 
