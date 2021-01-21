@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using CommandLine;
 using Newtonsoft.Json;
-using Retro.Dto;
+using Retro.Model;
 
 namespace Retro
 {
@@ -70,17 +70,17 @@ namespace Retro
       return 0;
     }
 
-    private static Dto.Retro LoadRetroObject()
+    private static Model.Retro LoadRetroObject()
     {
       if (File.Exists(_retroFileFullName))
       {
-        return JsonConvert.DeserializeObject<Dto.Retro>(File.ReadAllText(_retroFileFullName));
+        return JsonConvert.DeserializeObject<Model.Retro>(File.ReadAllText(_retroFileFullName));
       }
 
-      return new Dto.Retro();
+      return new Model.Retro();
     }
 
-    private static void AddNewRecord(Dto.Retro retro)
+    private static void AddNewRecord(Model.Retro retro)
     {
       var description = _options.Description;
       var date = DateTime.Now;
@@ -106,7 +106,7 @@ namespace Retro
       throw new ArgumentOutOfRangeException("Unknown record type");
     }
 
-    private static void SaveRetroObject(Dto.Retro retro)
+    private static void SaveRetroObject(Model.Retro retro)
     {
       var serializedObject = JsonConvert.SerializeObject(retro, Formatting.Indented);
       File.WriteAllText(_retroFileFullName, serializedObject);

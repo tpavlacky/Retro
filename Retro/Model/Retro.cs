@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Retro.Dto
+namespace Retro.Model
 {
   internal class Retro
   {

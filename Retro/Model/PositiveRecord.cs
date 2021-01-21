@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Retro.Dto
+namespace Retro.Model
 {
   internal class PositiveRecord : Record
   {
