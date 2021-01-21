@@ -23,6 +23,10 @@ jobs:
       - name: Build sln
         run: msbuild Retro.sln /p:Configuration=Release
         
+      - name: Current dir content
+        run: |
+          dir
+        
       - name: Switch to Release Folder
         run: |
           cd Retro\bin\Release
