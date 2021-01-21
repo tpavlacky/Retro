@@ -24,3 +24,8 @@ jobs:
       
       - name: Build sln
         run: msbuild Retro.sln /p:Configuration=Release
+        
+      - name: Switch to Release Folder
+        run: |
+          cd Retro\bin\Release
+          ls -la
