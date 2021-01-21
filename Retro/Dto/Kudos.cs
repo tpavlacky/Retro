@@ -23,7 +23,7 @@ namespace Retro.Dto
         return Description;
       }
 
-      return $"To '{ToWho}' with description: '{Description}'";
+      return $"'{ToWho}' -> '{Description}'";
     }
   }
 }
