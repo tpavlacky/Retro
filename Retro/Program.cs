@@ -87,44 +87,25 @@ namespace Retro
 
     private static void AddNewRecord(Dto.Retro retro)
     {
-      var newRecord = CreateRecord();
-      switch (newRecord)
-      {
-        case Kudos kudos:
-          retro.Kudos.Add(kudos);
-          return;
-        case NegativeRecord negativeRecord:
-          retro.NegativeExperiences.Add(negativeRecord);
-          return;
-        case PositiveRecord positiveRecord:
-          retro.PositiveExperiences.Add(positiveRecord);
-          return;
-      }
-
-      throw new ArgumentOutOfRangeException("Unknown record type");
-    }
-
-    private static Record CreateRecord()
-    {
       var description = _options.Description;
       var date = DateTime.Now;
 
       if (_options.Positive)
       {
-        return new PositiveRecord(description, date);
+        retro.PositiveExperiences.Add(new PositiveRecord(description, date));
       }
 
       if (_options.Negative)
       {
-        return new NegativeRecord(description, date);
+        retro.NegativeExperiences.Add(new NegativeRecord(description, date));
       }
 
       if (_options.Kudos)
       {
-        return new Kudos(_options.KudosTarget, description, date);
+        retro.Kudos.Add(new Kudos(_options.KudosTarget, description, date));
       }
 
-      throw new ArgumentOutOfRangeException("Unknow type of record");
+      throw new ArgumentOutOfRangeException("Unknown record type");
     }
 
     private static void SaveRetroObject(Dto.Retro retro)
