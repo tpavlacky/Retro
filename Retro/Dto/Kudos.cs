@@ -13,7 +13,17 @@ namespace Retro.Dto
 
     public override string ToString()
     {
-      return $"{Date:dd.MM.yyyy HH:mm} -> To '{ToWho}' with description: '{Description}'";
+      return $"{Date:dd.MM.yyyy HH:mm} -> {GetString()}";
+    }
+
+    private string GetString()
+    {
+      if (string.IsNullOrEmpty(ToWho))
+      {
+        return Description;
+      }
+
+      return $"To '{ToWho}' with description: '{Description}'";
     }
   }
 }

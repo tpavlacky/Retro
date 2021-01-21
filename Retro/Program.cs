@@ -25,11 +25,6 @@ namespace Retro
     private static int RunAddAndReturnExitCode(Options opts)
     {
       _options = opts;
-      if (_options.Kudos && string.IsNullOrEmpty(_options.KudosTarget))
-      {
-        Console.WriteLine("Kudos needs to be addressed");
-        return -1;
-      }
 
       var retro = LoadRetroObject();
       AddNewRecord(retro);
