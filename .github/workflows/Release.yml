@@ -23,10 +23,13 @@ jobs:
       - name: Build sln
         run: msbuild Retro.sln /p:Configuration=Release
         
+      - name: Current dir content
+        run: |
+          dir
+        
       - name: Switch to Release Folder
         run: |
-          cd bin\Release
-          ls -la
+          cd Retro\bin\Release
           
       - name: Create artifact
         uses: montudor/action-zip@v0.1.0
@@ -37,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
             name: Retro
-            path: build/Retro.zip
+            path: Release.zip
         
       - name: Upload to release
         uses: JasonEtco/upload-to-release@master

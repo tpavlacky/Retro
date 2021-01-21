@@ -1,3 +1,6 @@
+![CI](https://github.com/tpavlacky/Retro/workflows/Build/badge.svg) 
+[![Release](https://img.shields.io/github/release/tpavlacky/Retro.svg)](https://github.com/tpavlacky/Retro/releases/latest)
+
 # General
 This awesome and high-end application will allow you to store your remarks to the next retrospective.
 
