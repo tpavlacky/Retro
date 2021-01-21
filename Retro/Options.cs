@@ -17,7 +17,7 @@ namespace Retro
     [Option('t', "To", HelpText = "Kudos to who?")]
     public string KudosTarget { get; set; }
 
-    [Value(0, HelpText = "Description of the retro point", MetaName = "Description")]
+    [Value(0, HelpText = "Description of the retro point", MetaName = "Description", Required = true)]
     public string Description { get; set; }
   }
 
