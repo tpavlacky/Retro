@@ -23,4 +23,4 @@ jobs:
         run: nuget restore Retro.sln
       
       - name: Build sln
-        run: msbuild Retro.sln /p: Configuration=Release
+        run: msbuild Retro.sln /p:Configuration=Release
